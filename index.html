@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Livrinho Interativo — Standalone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css"/>
+  <!-- Exportar PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📘 Livrinho Interativo</div>
+    <div class="actions">
+      <button id="btnAdd" class="btn">+ Nova página</button>
+      <div class="dropdown" id="addMenu" hidden>
+        <button data-add="cover">Capa</button>
+        <button data-add="content">Conteúdo</button>
+        <button data-add="quiz">Quiz</button>
+        <button data-add="dragdrop">Arrastar & Soltar</button>
+        <button data-add="end">Final</button>
+      </div>
+      <button id="btnReader" class="btn alt">Modo Leitor</button>
+      <button id="btnExportJson" class="btn">Exportar JSON</button>
+      <label class="btn file">
+        Importar JSON <input type="file" id="fileJson" accept=".json" hidden>
+      </label>
+      <button id="btnExportPdf" class="btn">Exportar PDF</button>
+      <button id="btnClear" class="btn danger">Limpar</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <aside class="sidebar" aria-label="Lista de páginas">
+      <h3>Páginas</h3>
+      <ul id="pagesList"></ul>
+    </aside>
+
+    <section class="workspace">
+      <div class="editor" id="editorPanel" aria-label="Editor de propriedades">
+        <h3>Propriedades</h3>
+        <div id="editorFields">
+          <p>Selecione uma página para editar.</p>
+        </div>
+      </div>
+
+      <div class="preview" aria-label="Pré-visualização">
+        <nav class="book-nav" id="readerNav" hidden>
+          <button id="prevPage" class="btn-nav" aria-label="Página anterior">◀</button>
+          <div class="book-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="book-progress-bar"></div>
+          </div>
+          <button id="nextPage" class="btn-nav" aria-label="Próxima página">▶</button>
+        </nav>
+
+        <div id="readerArea" class="livrinho-container">
+          <!-- Páginas renderizadas aqui -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <small>App standalone em HTML/CSS/JS. Salva automaticamente no navegador.</small>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
