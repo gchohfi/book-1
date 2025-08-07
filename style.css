@@ -1,0 +1,77 @@
+:root{
+  --bk-bg:#f6f9ff;
+  --bk-primary:#4A6FE3;
+  --bk-secondary:#FFCA28;
+  --bk-accent:#FF8A65;
+  --bk-ok:#2e7d32;
+  --bk-error:#c62828;
+  --bk-text:#1B1F2A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bk-bg);color:var(--bk-text);font-family:'Nunito',system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+
+.topbar{
+  position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:.75rem;
+  padding:.6rem 1rem;background:#fff;border-bottom:1px solid rgba(0,0,0,.06)
+}
+.brand{font-weight:800}
+.actions{display:flex;gap:.5rem;align-items:center;position:relative}
+.btn{
+  border:0;padding:.5rem .8rem;border-radius:.6rem;background:var(--bk-primary);color:#fff;font-weight:700;cursor:pointer
+}
+.btn.alt{background:var(--bk-accent)}
+.btn.danger{background:#d32f2f}
+.btn.file{position:relative;overflow:hidden}
+
+.dropdown{position:absolute;top:110%;left:0;background:#fff;border:1px solid #e5ecff;border-radius:.6rem;box-shadow:0 8px 24px rgba(35,51,89,.12);padding:.25rem;display:grid}
+.dropdown>button{background:transparent;border:0;padding:.5rem .8rem;text-align:left;cursor:pointer}
+.dropdown>button:hover{background:#f0f4ff}
+
+.app{display:grid;grid-template-columns:260px 1fr;gap:1rem;max-width:1200px;margin:1rem auto;padding:0 1rem 2rem}
+
+.sidebar{background:#fff;border:1px solid #e5ecff;border-radius:.8rem;padding:1rem;height:calc(100vh - 160px);overflow:auto}
+.sidebar h3{margin:.2rem 0 1rem}
+#pagesList{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+.page-item{display:flex;align-items:center;gap:.4rem;padding:.45rem .5rem;border:1px solid #e5ecff;border-radius:.6rem;background:#f9fbff;cursor:pointer}
+.page-item.active{outline:2px solid var(--bk-secondary);background:#fff}
+.page-actions{margin-left:auto;display:flex;gap:.25rem}
+.page-actions button{border:0;background:transparent;cursor:pointer}
+
+.workspace{display:grid;grid-template-columns:380px 1fr;gap:1rem}
+.editor,.preview{background:#fff;border:1px solid #e5ecff;border-radius:.8rem;padding:1rem}
+.editor h3{margin:.2rem 0 1rem}
+
+.field{display:grid;gap:.25rem;margin:.5rem 0}
+.field label{font-size:.9rem}
+.field input[type="text"], .field textarea{width:100%;padding:.45rem .55rem;border:1px solid #dbe3ff;border-radius:.5rem;font:inherit}
+.field textarea{min-height:120px;resize:vertical}
+.field .row{display:flex;gap:.5rem}
+.small{font-size:.9rem;color:#3e4a66}
+
+.book-nav{display:flex;align-items:center;gap:.75rem;padding:.25rem .5rem;background:white;border:1px solid #e5ecff;border-radius:.6rem;margin-bottom:.5rem}
+.btn-nav{border:0;padding:.45rem .65rem;font-weight:700;cursor:pointer;border-radius:.6rem;background:var(--bk-primary);color:#fff}
+.book-progress{flex:1;background:#eef2ff;border-radius:999px;height:.6rem;overflow:hidden}
+.book-progress-bar{height:100%;width:0%;background:var(--bk-secondary);transition:width .25s}
+
+.livrinho-container{padding:.5rem 0;}
+
+.book-page{background:#fff;border:1px solid #e5ecff;border-radius:18px;padding:1.25rem;margin:0 0 1rem;box-shadow:0 8px 24px rgba(35,51,89,.06)}
+.book-page[hidden]{display:none!important}
+.book-title{font-size:clamp(26px,3.2vw,42px);margin:0 0 .25rem;font-weight:800;color:var(--bk-primary)}
+.book-subtitle{font-size:clamp(18px,2.2vw,24px);margin:0 0 .75rem;color:var(--bk-accent)}
+.book-content{font-size:1.05rem;line-height:1.6}
+
+.quiz .question{font-weight:800;font-size:1.15rem;margin:.4rem 0}
+.quiz .options{list-style:none;padding:0;margin:.5rem 0;display:grid;gap:.35rem}
+.quiz .options li{background:#f7faff;border:1px solid #e5ecff;padding:.5rem .7rem;border-radius:.6rem}
+.quiz .feedback{font-weight:700}
+.quiz .ok{color:var(--bk-ok)}.quiz .err{color:var(--bk-error)}
+
+.dd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:.5rem}
+.dd-col{background:#f7faff;border:1px dashed #c9d6ff;border-radius:.8rem;padding:.6rem;min-height:120px}
+.dd-item{background:#fff;border:1px solid #e8eaf6;border-radius:.5rem;padding:.4rem .5rem;margin:.35rem 0;cursor:grab}
+.dd-item:active{cursor:grabbing}
+.dd-drop.ok{outline:3px solid var(--bk-ok)}
+.dd-drop.bad{outline:3px solid var(--bk-error)}
+
+.foot{max-width:1200px;margin:0 auto 2rem;padding:0 1rem;color:#4b587a}
